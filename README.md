@@ -6,11 +6,8 @@
 steps:
   - name: Apply database migrations
     uses: ahanoff/movine-action@main
-    env:
-      PGHOST: localhost
-      PGPORT: 5432
-      PGDATABASE: movine
-      PGUSER: movine
-      PGPASSWORD: password
-
+    with:
+      args: movine up
+      env:
+        DATABASE_URL: postgres://movine:password@localhost:5432/movine
 ```
